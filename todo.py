@@ -1,0 +1,140 @@
+#!/usr/bin/env python
+from peewee import *
+from datetime import datetime
+database = SqliteDatabase(':tache:')  # Create a database instance.
+
+
+class Tache(Model):
+    description = CharField()
+    date_creation = DateTimeField()
+    date_debut = DateTimeField()
+    date_fin = DateTimeField()
+    is_done = BooleanField()
+
+    def get_tache_undone(cls):
+        taches = Tache.select().where(Tache.is_done == False)
+        return(taches)
+
+    def get_tache_done(cls):
+        taches = Tache.select().where(Tache.is_done == True)
+        return(taches)
+
+    def ajouter_tache(cls, description, date):
+        current_tache = Tache(
+            description=description,
+            date_creation=date,
+            is_done=False
+        )
+        current_tache.save()
+
+    def count_tache_undone(cls):
+        return(Tache.select().where(Tache.is_done == False).count())
+
+    def count_tache_done(cls):
+        return(Tache.select().where(Tache.is_done == True).count())
+
+    def change_status(self):
+        if self.is_done is True:
+            self.is_done = False
+        else:
+            self.is_done = True
+            self.date_fin = datetime.now()
+            totoletag=Tag(name="toto")
+            totoletag.ajouter()
+            self.ajoute_tag(totoletag)
+        self.save()
+
+    def delete2(self):
+        self.delete_instance()
+
+    def stringmoica(self, isSelected):
+        my_string = ""
+        if isSelected is True:
+            my_string = ">"
+        else:
+            my_string = " "
+        if self.date_fin:
+            my_string += str(self.date_fin) + " " + self.description
+            my_string += " " + str(self.duree())
+        else:
+            my_string += str(self.date_creation) + " " + self.description
+        return(my_string)
+
+    def ajoute_tag(self, ptTag):
+        TacheTag(tag=ptTag, tache=self).save()
+
+    def get_tags(self):
+        maListe = []
+        for tag in (Tag.select().join(TacheTag).join(Tache).where(Tache.id == self.id)):
+            maListe.append(Tag(name=tag.name))
+        return (maListe)
+
+    def duree(self):
+        if self.date_fin:
+            duree = self.date_fin - self.date_creation
+            duree_annee = duree.days // 365
+            duree_mois = duree.days % 365 // 31
+            duree_semaine = duree.days // 7
+            duree_jour = duree.days
+            duree_heure = (int)(duree.total_seconds() % 86400/3600)
+            duree_minute = (int)(duree.total_seconds() % (86400*3600)/60)
+            duree_seconde = (int)(duree.total_seconds() % (86400*3600*60))
+            duree_str = "("
+            if duree_annee > 0:
+                duree_str += str(duree_annee) + "ans "
+                duree_str += str(duree_mois) + "mois"
+            elif duree_mois > 0:
+                duree_str += str(duree_mois) + "mois "
+                duree_str += str(duree_semaine) + "sem"
+            elif duree_semaine > 0:
+                duree_str += str(duree_semaine) + "sem "
+                duree_str += str(duree_jour) + "j"
+            elif duree_jour > 0:
+                duree_str += str(duree_jour) + "j "
+                duree_str += str(duree_heure) + "h"
+            elif duree_heure > 0:
+                duree_str += str(duree_heure) + "h "
+                duree_str += str(duree_minute) + "m"
+            elif duree_minute > 0:
+                duree_str += str(duree_minute) + "m "
+                duree_str += str(duree_seconde) + "s"
+            else:
+                duree_str += str(duree_seconde) + "s"
+            duree_str += ")"
+            return(duree_str)
+
+    class Meta:
+        database = database
+
+
+#Tache.create_table()
+class Tag(Model):
+    name = CharField()
+
+    def ajouter(self):
+        #Verification si le tag existe
+        try:
+            monTag=Tag.get(name=self.name)  
+            self.id = monTag.id
+        except TagDoesNotExist:
+            self.save()
+
+    class Meta:
+        database = database
+#Tag.create_table()
+
+
+class TacheTag(Model):
+    tache = ForeignKeyField(Tache)
+    tag = ForeignKeyField(Tag)
+
+    def ajouter(self):
+        try:
+            self.save()
+        except Exception, e:
+            print e
+
+    class Meta:
+        database = database
+
+#TacheTag.create_table()
