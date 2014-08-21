@@ -39,7 +39,7 @@ class Tache(Model):
         else:
             self.is_done = True
             self.date_fin = datetime.now()
-            totoletag=Tag(name="toto")
+            totoletag=Tag(name="test")
             totoletag.ajouter()
             self.ajoute_tag(totoletag)
         self.save()
@@ -47,7 +47,7 @@ class Tache(Model):
     def delete2(self):
         self.delete_instance()
 
-    def stringmoica(self, isSelected):
+    def stringmoica(self, isSelected=False):
         my_string = ""
         if isSelected is True:
             my_string = ">"
@@ -114,10 +114,20 @@ class Tag(Model):
     def ajouter(self):
         #Verification si le tag existe
         try:
-            monTag=Tag.get(name=self.name)  
+            monTag = Tag.get(name=self.name)
             self.id = monTag.id
-        except TagDoesNotExist:
+        except Exception:
             self.save()
+
+    def get_tags(cls):
+        all_tags = Tag.select()
+        return(all_tags)
+
+    def get_nb_tache(self):
+        return(Tag.select().join(TacheTag).where(Tag.id == self.id).count())
+
+    def stringmoica(self):
+        return(self.name+"("+str(self.get_nb_tache())+")")
 
     class Meta:
         database = database

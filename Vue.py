@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from todo import Tache
+from todo import Tache, Tag
 from datetime import datetime
 import curses
 from curses.textpad import Textbox, rectangle
@@ -9,11 +9,12 @@ from curses.textpad import Textbox, rectangle
 def print_bottom_menu(ecran):
     taille_screen = ecran.getmaxyx()
     print_notification(ecran, str(taille_screen)+"     ")
-    bottom_menu = ("A pour Ajouter;" +
+    bottom_menu = ("A for Add;" +
                    "Q For Quit;" +
                    "T for To do;" +
                    "D for Done;" +
-                   "F for Flash"
+                   "F for Flash;" +
+                   "S for Supress"
                    )
 
     if len(bottom_menu) > taille_screen[1]:
@@ -33,8 +34,18 @@ def print_notification(ecran, message):
     ecran.addstr(0, taille_screen[1]-len(message), message, curses.A_STANDOUT)
 
 
+def print_tag_menu(ecran):
+    ecran.addstr(3, get_max_pos(ecran)["x"]-12, "TAGS :", curses.A_STANDOUT)
+    tags = Tag().get_tags()
+    i = 1
+    for tag in tags:
+        ecran.addstr(3+i, get_max_pos(ecran)["x"]-12, " "+tag.name+"("+str(tag.get_nb_tache())+")")
+        i += 1
+
+
 def print_main_screen(ecran):
     print_title(ecran)
+    print_tag_menu(ecran)
     print_bottom_menu(ecran)
 
 
@@ -56,10 +67,13 @@ def print_tache(ecran, x, y, tache, isSelected=False):
 
 
 def print_tags(ecran, x, y, tache):
-    ltTags = tache.get_tags()    
+    ltTags = tache.get_tags()
     if len(ltTags) > 0:
+        i = 0
         for tag in ltTags:
-            screen.addstr(y, x, " "+tag.name, curses.color_pair(1))
+            screen.addstr(y, x+i, " ")
+            screen.addstr(y, x+i, tag.name, curses.color_pair(1))
+            i = len(tag.name) + 1
 
 
 def get_pos(ecran):
@@ -69,9 +83,16 @@ def get_pos(ecran):
     return(dico)
 
 
+def get_max_pos(ecran):
+    dico = {}
+    dico["y"], dico["x"] = ecran.getmaxyx()
+    return(dico)
+
+
 def window_for_done_task(screen):
     screen.clear()
     print_taches(screen, Tache().get_tache_done(), "Taches faites")
+    print_tag_menu(screen)
     print_bottom_menu(screen)
     #A voir si on ne peut pas recuperer ca en code
     deal_with_selected(screen, 33, 45, Tache().get_tache_done(),
@@ -81,6 +102,7 @@ def window_for_done_task(screen):
 def window_for_undone_task(screen):
     screen.clear()
     print_taches(screen, Tache().get_tache_undone(), "Taches a faire :")
+    print_tag_menu(screen)
     print_bottom_menu(screen)
     deal_with_selected(screen, 33, 45, Tache().get_tache_undone(),
                        window_for_undone_task)
@@ -124,7 +146,7 @@ def deal_with_selected(screen, x, y, taches, parent_function):
     nb_taches = taches.count()
     if nb_taches > 0:
         #initisation,on selectionne la premiere tache
-        print_tache(screen, 3, 4,taches[0], True)
+        print_tache(screen, 3, 4, taches[0], True)
         i = 0   
     else:
         i = 0
@@ -137,11 +159,6 @@ def deal_with_selected(screen, x, y, taches, parent_function):
             if event == curses.KEY_DOWN:
                 i = i + 1
                 i %= taches.count()
-                print_notification(screen,
-                                   " "+str(i)+"   [" +
-                                   str(Tache().count_tache_undone()) +
-                                   "/" + str(Tache().count_tache_done())+"]"
-                                   )
                 if i == 0:
                     print_tache(screen, 3, 4 + taches.count() - 1,
                                 taches[taches.count() - 1])
@@ -151,15 +168,6 @@ def deal_with_selected(screen, x, y, taches, parent_function):
                     print_tache(screen, 3, 4 + i, taches[i], True)
             if event == curses.KEY_UP:
                 i = i - 1
-                print_notification(screen,
-                                   " " +
-                                   str(i) +
-                                   " [" +
-                                   str(Tache().count_tache_undone()) +
-                                   "/" +
-                                   str(Tache().count_tache_done()) +
-                                   "]"
-                                   )
                 if i < 0:
                     print_tache(screen, 3, 4, taches[0])
                     i = taches.count()-1
@@ -167,14 +175,10 @@ def deal_with_selected(screen, x, y, taches, parent_function):
                 else:
                     print_tache(screen, 3, 4 + i + 1, taches[i + 1])
                     print_tache(screen, 3, 4 + i, taches[i], True)
-
             if event == ord("P"):
                 if i >= 0:
                     taches[i].change_status()
                     parent_function(screen)
-                    print_notification(screen,
-                                       " "+str(type(parent_function))
-                                       )
             if event == ord("S"):
                 if i >= 0:
                     taches[i].delete2()
