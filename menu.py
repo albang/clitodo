@@ -45,6 +45,17 @@ class Menu(object):
     def selection(self, index=0):
         self.selectedIndex = index
 
+    def getSelected(self):
+        return(self.items[self.selectedIndex])
+
+    def getSelectedPosition(self):
+        return((self.topX + self.padding + len(self.selector)),
+               (self.topY + 1 + self.selectedIndex)
+               )
+
+    def getItemLength(self):
+        return(len(str(self.items[self.selectedIndex])))
+
 
 class TagMenu(Menu):
     """docstring for TagMenu"""
@@ -55,6 +66,14 @@ class TagMenu(Menu):
         self.title = title
         self.topX = 100
 
+class MultiMenu(Menu):
+    """docstring for MultiMenu"""
+    def __init__(self, items, topX=0, topY=0):
+        super(Menu, self).__init__()
+        self.items = items
+        self.menuLength = len(items)
+        self.topX=topX
+        self.topY=topY
 
 class MagicIndex(object):
     """docstring for MagicIndex"""

@@ -11,6 +11,7 @@ class Tache(Model):
     date_fin = DateTimeField()
     is_done = BooleanField()
 
+
     def get_tache_undone(cls):
         taches = Tache.select().where(Tache.is_done == False)
         return(taches)
@@ -103,6 +104,42 @@ class Tache(Model):
             duree_str += ")"
             return(duree_str)
 
+    def getAction(self):
+        listAction = ["Archiver", "Tagguer"]
+        return(listAction)
+
+    def len(self):
+        return(len(str(self)))
+
+    def __str__(self):
+        return(Tache.renderer.render(self))
+
+
+
+    def init_renderer(self):
+        renderList =[{
+                            'description':
+                            {
+                                'id': 0,
+                                'functions': [str.capitalize,str],
+                                'show': True,
+                            }
+                            },
+                            {
+                            'id': {
+                                'id': 0,
+                                'functions': [str],
+                                'show': False,
+                            }},
+                            {
+                             'date_creation':
+                            {
+                                'id': 0,
+                                'functions': [str],
+                                'show': False,
+                            }
+                           }]
+        Tache.renderer = Renderer(renderList)
     class Meta:
         database = database
 
@@ -110,7 +147,7 @@ class Tache(Model):
 #Tache.create_table()
 class Tag(Model):
     name = CharField()
-
+    
     def ajouter(self):
         #Verification si le tag existe
         try:
@@ -129,6 +166,39 @@ class Tag(Model):
     def stringmoica(self):
         return(self.name+"("+str(self.get_nb_tache())+")")
 
+    def __str__(self):
+        return(Tag.renderer.render(self))
+
+    def init_renderer(self):
+        renderList =[{
+                        'name':
+                        {
+                            'id': 0,
+                            'functions': [str],
+                            'show': True,
+                        }
+                        },
+                        {
+                        'id': {
+                            'id': 0,
+                            'functions': [str],
+                            'show': False,
+                        }},
+                        {
+                        'get_nb_tache':
+                        {
+                            'id': 0,
+                            'functions': [Renderer().addParenthesis,str],
+                            'show': True,
+                        }
+                       }]
+
+        Tag.renderer = Renderer(renderList)
+
+    def metal(self,titi):
+        return(str(titi))
+
+
     class Meta:
         database = database
 #Tag.create_table()
@@ -141,10 +211,33 @@ class TacheTag(Model):
     def ajouter(self):
         try:
             self.save()
-        except Exception, e:
-            print e
+        except Exception as  e:
+            print(e)
 
     class Meta:
         database = database
 
 #TacheTag.create_table()
+
+
+class Renderer(object):
+    """docstring for renderer"""
+    def __init__(self, displayTable = {}):
+        super(Renderer, self).__init__()
+        self.displayTable = displayTable
+
+    def render(self, renderMe):
+        strView = ""
+        for displayItem in self.displayTable:
+            for attribut, settings in displayItem.items():
+                if settings["show"]:
+                    functionId = settings["id"]
+                    renderFunction = settings["functions"][functionId]
+                    if callable(renderMe.__getattribute__(attribut)):
+                        strView += renderFunction(renderMe.__getattribute__(attribut)())
+                    else:
+                        strView += renderFunction(renderMe.__getattribute__(attribut))
+        return(strView)
+
+    def addParenthesis(self, item):
+        return("("+str(item)+")")
