@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 from peewee import *
 from datetime import datetime
+import logging
 database = SqliteDatabase(':tache:')  # Create a database instance.
 
+logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
 class Tache(Model):
     description = CharField()
@@ -11,7 +13,6 @@ class Tache(Model):
     date_fin = DateTimeField()
     is_done = BooleanField()
 
-
     def get_tache_undone(cls):
         taches = Tache.select().where(Tache.is_done == False)
         return(taches)
@@ -19,6 +20,17 @@ class Tache(Model):
     def get_tache_done(cls):
         taches = Tache.select().where(Tache.is_done == True)
         return(taches)
+
+    def get_tache_to_show(cls):
+        if len(Tag.hidedTag) : 
+            #taches = Tache.select().join(TacheTag).join(Tag).where(Tache.id == self.id)
+            taches = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id != Tag.hidedTag[0].id)
+        else:
+            taches = Tache.select(Tache)
+
+        for tache in taches:
+            tache.get_tags() 
+        return(taches)      
 
     def ajouter_tache(cls, description, date):
         current_tache = Tache(
@@ -37,12 +49,13 @@ class Tache(Model):
     def change_status(self):
         if self.is_done is True:
             self.is_done = False
+            self.ajoute_tag(ptTag=Tag().ajouter(name="undone"))
+            self.deleteTag("done")
         else:
             self.is_done = True
             self.date_fin = datetime.now()
-            totoletag=Tag(name="test")
-            totoletag.ajouter()
-            self.ajoute_tag(totoletag)
+            self.ajoute_tag(ptTag=Tag().ajouter(name="done"))
+            self.deleteTag("undone")
         self.save()
 
     def delete2(self):
@@ -62,12 +75,28 @@ class Tache(Model):
         return(my_string)
 
     def ajoute_tag(self, ptTag):
-        TacheTag(tag=ptTag, tache=self).save()
+        try:
+            TacheTag.create(tag=ptTag, tache=self)
+        except Exception as e:
+            logging.error(e)
+
+    def deleteTag(self,tagName="caca"):
+        try:
+            delTag = TacheTag.get(tag=Tag().ajouter(name=tagName),tache=self)
+            delTag.delete_instance()
+        except Exception as e:
+            logging.warning(e)
+
+    def tagCaca(self):
+        logging.info("[pb1]"+self.description+" Tag caca ")
+        self.ajoute_tag(ptTag=Tag().ajouter(name="caca"))
+        pass
 
     def get_tags(self):
         maListe = []
         for tag in (Tag.select().join(TacheTag).join(Tache).where(Tache.id == self.id)):
             maListe.append(Tag(name=tag.name))
+        self.tags = maListe
         return (maListe)
 
     def duree(self):
@@ -86,7 +115,7 @@ class Tache(Model):
                 duree_str += str(duree_mois) + "mois"
             elif duree_mois > 0:
                 duree_str += str(duree_mois) + "mois "
-                duree_str += str(duree_semaine) + "sem"
+                duree_str += str(duree_sloggeemaine) + "sem"
             elif duree_semaine > 0:
                 duree_str += str(duree_semaine) + "sem "
                 duree_str += str(duree_jour) + "j"
@@ -105,14 +134,58 @@ class Tache(Model):
             return(duree_str)
 
     def getAction(self):
-        listAction = ["Archiver", "Tagguer"]
+        listAction = [{'Archiver': {
+                      'action': self.archiveMe,
+                      'show': True,
+                      }},
+                      {'Tagguer': {
+                       'action': self.tagCaca,
+                       'show': True,
+                       }},
+                      {'Delete Tag': {
+                       'action': self.deleteTag,
+                       'show': True,
+                       }
+                       }]
+        if self.is_done:
+            listAction.append({'undone this task': {
+                              'action': self.change_status,
+                              'show': True,
+                              }})
+        else:
+            listAction.append({'done this task': {
+                              'action': self.change_status,
+                              'show': True,
+                              }})
+        listAction.append({'Cancel': {
+                              'action': self.cancel,
+                              'show': True,
+                              }})
         return(listAction)
+
+    def cancel(self):
+        pass
+
+    def archiveMe(self):
+        pass
 
     def len(self):
         return(len(str(self)))
 
+    def cache_nb_tag(fonctionADecorer,self):
+        def wrapper(self):
+            hasChanged = Tag.hideNbTaches()
+            monStr = fonctionADecorer(self)
+            if hasChanged:
+                Tag.showNbTaches
+            return(monStr)
+
     def __str__(self):
-        return(Tache.renderer.render(self))
+        hasChanged = Tag.hideNbTaches()
+        monStr = Tache.renderer.render(self)
+        if hasChanged:
+            Tag.showNbTaches
+        return(monStr)
 
 
 
@@ -138,6 +211,14 @@ class Tache(Model):
                                 'functions': [str],
                                 'show': False,
                             }
+                           },
+                           {
+                             'tags':
+                            {
+                                'id': 0,
+                                'functions': [Renderer().concatTag,str],
+                                'show': True,
+                            }
                            }]
         Tache.renderer = Renderer(renderList)
     class Meta:
@@ -147,14 +228,17 @@ class Tache(Model):
 #Tache.create_table()
 class Tag(Model):
     name = CharField()
-    
-    def ajouter(self):
+    hidedTag = []
+
+    def ajouter(self, name):
         #Verification si le tag existe
         try:
-            monTag = Tag.get(name=self.name)
+            monTag = Tag.get(name=name)
             self.id = monTag.id
         except Exception:
-            self.save()
+            monTag = Tag(name=name)
+            monTag.save()
+        return(monTag)
 
     def get_tags(cls):
         all_tags = Tag.select()
@@ -166,11 +250,57 @@ class Tag(Model):
     def stringmoica(self):
         return(self.name+"("+str(self.get_nb_tache())+")")
 
+    def getAction(self):
+        listAction = [{'Archiver': {
+                      'action': self.archiveMe,
+                      'show': True,
+                      }},
+                      {'Delete Tag': {
+                       'action': self.deleteTag,
+                       'show': True,
+                       }
+                       }]
+        if self in Tag.hidedTag:
+            listAction.append({'show': {
+                              'action': self.change_status,
+                              'show': True,
+                              }})
+        else:
+            listAction.append({'hide': {
+                              'action': self.change_status,
+                              'show': True,
+                              }})
+        listAction.append({'Cancel': {
+                              'action': self.cancel,
+                              'show': True,
+                              }})
+        return(listAction)
+
+    def cancel(self):
+        pass
+
+    def archiveMe(self):
+        pass
+
+    def change_status(self):
+        if self in Tag.hidedTag:
+            Tag.hidedTag.remove(self)
+            logging.info("[change_status][TAG] Show "+self.name)
+        else:
+            Tag.hidedTag.append(self)
+            logging.info("[change_status][TAG] Hide "+self.name)
+
+        pass
+
+    def deleteTag(self):
+        
+        self.delete_instance(True)
+
     def __str__(self):
         return(Tag.renderer.render(self))
 
     def init_renderer(self):
-        renderList =[{
+        renderList = [{
                         'name':
                         {
                             'id': 0,
@@ -194,10 +324,14 @@ class Tag(Model):
                        }]
 
         Tag.renderer = Renderer(renderList)
-
-    def metal(self,titi):
-        return(str(titi))
-
+    @classmethod
+    def hideNbTaches(cls):
+        hasChanged = cls.renderer.hide_attribut("get_nb_tache")
+        return(hasChanged)
+    @classmethod
+    def showNbTaches(cls):
+        hasChanged = cls.renderer.show_attribut("get_nb_tache")
+        return(hasChanged)
 
     class Meta:
         database = database
@@ -216,6 +350,8 @@ class TacheTag(Model):
 
     class Meta:
         database = database
+        primary_key = CompositeKey('tache', 'tag')
+
 
 #TacheTag.create_table()
 
@@ -240,4 +376,28 @@ class Renderer(object):
         return(strView)
 
     def addParenthesis(self, item):
-        return("("+str(item)+")")
+        return("(" + str(item) + ")")
+
+    def concatTag(self, tags):
+        tagStr = ""
+        for tag in tags:
+            tagStr += " " + str(tag)
+        return(tagStr)
+
+    def hide_attribut(self, attributHide):
+        hasChanged = False
+        for displayItem in self.displayTable:
+            for attribut, settings in displayItem.items():
+                if attribut ==  attributHide and settings["show"]:
+                    settings["show"] = False
+                    hasChanged = True
+        return(hasChanged)
+
+    def show_attribut(self, attributHide):
+        hasChanged = False
+        for displayItem in self.displayTable:
+            for attribut, settings in displayItem.items():
+                if attribut == attributHide and settings["show"] is False:
+                    settings["show"] = True
+                    hasChanged = True
+        retun(True)
