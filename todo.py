@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+"""
+Wonderfull project
+I don't know the relevant info i have to put here :/
+"""
 from peewee import *
 from datetime import datetime
 import logging
@@ -13,24 +17,46 @@ class Tache(Model):
     date_fin = DateTimeField()
     is_done = BooleanField()
 
-    def get_tache_undone(cls):
+    def get_tache_undone(self):
         taches = Tache.select().where(Tache.is_done == False)
         return(taches)
 
-    def get_tache_done(cls):
+    def get_tache_done(self):
         taches = Tache.select().where(Tache.is_done == True)
         return(taches)
 
-    def get_tache_to_show(cls):
-        if len(Tag.hidedTag) : 
+    def get_tache_to_show(self):
+        if len(Tag.hidedTag):
             #taches = Tache.select().join(TacheTag).join(Tag).where(Tache.id == self.id)
-            taches = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id != Tag.hidedTag[0].id)
+            hideAll=Tag().ajouter(name="Archive")
+            idList = []
+            archivedTask = []
+            taskToShow = []
+            for tag in Tag().get_tags():
+                idList.append(tag.id)
+            for tag in Tag.hidedTag:
+                idList.remove(tag.id)
+            #taches = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id != Tag.hidedTag[0].id)
+            tachesAcacher = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id == hideAll.id)
+            for tache in tachesAcacher:
+                archivedTask.append(tache.id)
+            try:
+                taches = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id << idList)
+            except Exception as e:
+                logging.debug("Querysoucy req # " + e + " #")
+
+            for tache in taches:
+                if not tache.id in archivedTask:
+                    taskToShow.append(tache)
+
         else:
             taches = Tache.select(Tache)
+            for tache in taches:
+                taskToShow.append(tache)
 
-        for tache in taches:
-            tache.get_tags() 
-        return(taches)      
+        for tache in taskToShow:
+            tache.get_tags()
+        return(taskToShow)
 
     def ajouter_tache(cls, description, date):
         current_tache = Tache(
@@ -88,8 +114,8 @@ class Tache(Model):
             logging.warning(e)
 
     def tagCaca(self):
-        logging.info("[pb1]"+self.description+" Tag caca ")
-        self.ajoute_tag(ptTag=Tag().ajouter(name="caca"))
+        logging.info("[pb1]"+self.description+" Tag test ")
+        self.ajoute_tag(ptTag=Tag().ajouter(name="test"))
         pass
 
     def get_tags(self):
@@ -167,7 +193,7 @@ class Tache(Model):
         pass
 
     def archiveMe(self):
-        pass
+        self.ajoute_tag(ptTag=Tag().ajouter(name="Archive"))
 
     def len(self):
         return(len(str(self)))
@@ -183,8 +209,8 @@ class Tache(Model):
     def __str__(self):
         hasChanged = Tag.hideNbTaches()
         monStr = Tache.renderer.render(self)
-        if hasChanged:
-            Tag.showNbTaches
+        if hasChanged is True:
+            Tag.showNbTaches()
         return(monStr)
 
 
@@ -217,7 +243,7 @@ class Tache(Model):
                             {
                                 'id': 0,
                                 'functions': [Renderer().concatTag,str],
-                                'show': True,
+                                'show': False,
                             }
                            }]
         Tache.renderer = Renderer(renderList)
@@ -293,9 +319,11 @@ class Tag(Model):
         pass
 
     def deleteTag(self):
-        
-        self.delete_instance(True)
-
+        if self.name != "done" and self.name != "undone":
+            self.delete_instance(True)
+        else:
+            logging.error("You can't delete system TAG !"+
+                          "That's not cool for me :(")
     def __str__(self):
         return(Tag.renderer.render(self))
 
@@ -324,10 +352,14 @@ class Tag(Model):
                        }]
 
         Tag.renderer = Renderer(renderList)
+
     @classmethod
     def hideNbTaches(cls):
         hasChanged = cls.renderer.hide_attribut("get_nb_tache")
+        #logging.debug(" Bonjour je suis la class tag et hide attribut " +
+        #              "et ma valeur est... " + str(hasChanged))
         return(hasChanged)
+
     @classmethod
     def showNbTaches(cls):
         hasChanged = cls.renderer.show_attribut("get_nb_tache")
@@ -397,7 +429,8 @@ class Renderer(object):
         hasChanged = False
         for displayItem in self.displayTable:
             for attribut, settings in displayItem.items():
+                #logging.debug("attribut = " + attribut +" show " + str(settings["show"]))
                 if attribut == attributHide and settings["show"] is False:
                     settings["show"] = True
                     hasChanged = True
-        retun(True)
+        return(hasChanged)

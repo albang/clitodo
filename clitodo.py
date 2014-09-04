@@ -2,7 +2,7 @@
 import curses
 from todo import Tache, Tag
 from curses.textpad import Textbox, rectangle
-from menu import MultiMenu
+from menu import TacheMenu, TagMenu, MultiMenu, TacheTagMenu
 import logging
 
 class View(object):
@@ -18,7 +18,8 @@ class View(object):
     def __init__(self):
         self.screen = curses.initscr()
         curses.start_color()
-        curses.init_pair(1, curses.COLOR_RED, curses.COLOR_WHITE)
+        curses.use_default_colors()
+        #curses.init_pair(1, curses.COLOR_RED, curses.COLOR_WHITE)
         curses.noecho()
         curses.curs_set(0)
         self.screen.keypad(1)
@@ -28,64 +29,129 @@ class View(object):
         Tache().init_renderer()
         #log.redraw_menu(ging.basicConfig(filename='example.log', level=#logging.DEBUG)
         ##logging.basicConfig(filename='info.log', level=#logging.INFO)
+        cpt = 0
+        for i in range(-1, 8):
+            for y in range(-1, 8):
+                curses.init_pair(cpt, y, i)
+                cpt += 1
+
+    def getMaxXY(self):
+        """
+            This funtion return Max x y coordinate of the terminal screen
+            :returns: a dictionary with "x" and "y" 
+        """
+        return(self.max)
 
     def stop(self):
+        """
+            This function quit cleanly the terminal.
+        """
         curses.endwin()
 
     def main_window(self, menus):
+        """
+            This function print a list of menus
+            Perhaps we can change the name because nothing is hardcoded
+            maybe print_windows
+            :param menus:memus
+            :type menu:A list of Menu
+            :returns: None
+        """
         self.screen.clear()
-        self.print_rectangle(99, 0, 115, 6)
-        self.print_rectangle(2, 0, 96, 20)
+        #self.print_rectangle(99, 0, 115, 6)
+        #self.print_rectangle(2, 0, 96, 20)
         for menu in menus:
 
             self.print_menu(menu)
         self.print_bottom_msg()
 
     def print_menu(self, menu):
+        """
+            This is a "meta" function which print a menu
+            :param menu:menu
+            :type menu: Menu
+        """
         #logging.debug("print menu >"+menu.title)
         if type(MultiMenu([])) == type(menu):
-            tX, tY, dX, dY = menu.entoureMe()
-            self.print_rectangle(tX, tY, dX, dY)
-        ##logging.debug("[print_menu] nb_item" + str(menu.menuLength))
+            self.print_action_menu(menu)
+        elif isinstance(menu, TacheMenu):
+            self.print_tache_menu(menu)
+        elif isinstance(menu, TagMenu):
+            self.print_tag_menu(menu)
+
+    def print_tache_menu(self, menu):
+        """
+            This is a "meta" function which print a menu
+            :param menu:menu
+            :type menu: Menu
+        """
+        tX, tY, dX, dY = menu.entoureMe()
+        self.print_rectangle(tX, tY, dX + 3, dY)
         self.screen.addstr(menu.topY, menu.topX, menu.title)
-        ##logging.info("[print_menu] Type menu.items" + str(type(menu.items)))
-        #pprint(menu.items)
         for indice, item in enumerate(list(menu.items)):
-        #for indice, item in menu.items.items:
-         #   #logging.info("[print_menu]" + str(item) + " indice "+str(indice))
+            self.print_item(menu, item, indice)
+            tagsMenus = menu.getSubMenu()
+            logging.debug("[print_item] TAILLLEEEEEEEE" + str(len(tagsMenus)) +
+                          "item" + str(indice))
+            self.print_tacheTagMenu( tagsMenus[indice])
+            #self.print_item(menu.getSubMenu()[indice], item, indice)
+
+    def print_tacheTagMenu(self, menu):
+        if menu.getMenuLength() > 0:
+            i = 0
+            logging.debug("[print_item] TAILLLEEEEEEEE"+ str(len(menu.getItems())))
+            for item in menu.getItems():
+                logging.debug("[print_item] TACHTAG ")
+                self.screen.addstr(menu.getFirstItemY() + i,
+                                   menu.getFirstItemX(), " ")
+                x, y = menu.getItemPosition(i)
+                logging.debug("[print_item] dbg2 x : "+ str(x) + " y :" + str(y))
+                self.screen.addstr(y, x, item.name, curses.color_pair(13))
+                i += 1
+
+    def print_tag_menu(self, menu):
+        self.screen.addstr(menu.topY, menu.topX, menu.title)
+
+        for indice, item in enumerate(list(menu.items)):
+            self.print_item(menu, item, indice)
+
+    def print_action_menu(self, menu):
+        tX, tY, dX, dY = menu.entoureMe()
+        self.print_rectangle(tX, tY, dX, dY)
+        self.screen.addstr(menu.topY, menu.topX, menu.title)
+        for indice, item in enumerate(list(menu.items)):
             self.print_item(menu, item, indice)
 
     def print_item(self, menu, item, index):
-        cleanStr = (menu.maxItemWidth - len(str(item)))*" "
+        #cleanStr = (menu.maxItemWidth - len(str(item)))*" "
         ##logging.debug("[print_item] item "+str(index))
+        x, y = menu.getItemPosition(index)
         if menu.isSelected(index):
-            self.screen.addstr(menu.firstItemY + index,
-                               menu.firstItemX,
-                               menu.selector + str(item),
+            self.screen.addstr(y, x, menu.selector + str(item),
                                curses.A_STANDOUT
                                )
-            if len(cleanStr) > 0:
-                endLine = menu.firstItemX + len(menu.selector) + len(str(item))
-                self.screen.addstr(menu.firstItemY + index, endLine, cleanStr)
+            #if len(cleanStr) > 0:
+            #   endLine = menu.firstItemX + len(menu.selector) + len(str(item))
+            #  self.screen.addstr(menu.firstItemY + index, endLine, cleanStr)
         else:
-            self.screen.addstr(menu.firstItemY + index,
-                               menu.firstItemX,
-                               len(menu.selector)*" " + str(item)+cleanStr)
+            self.screen.addstr(y, x, len(menu.selector)*" " + str(item))
 
         self.screen.refresh()
 
     def redraw_menu(self, menu):
-        self.screen.addstr(menu.firstItemY + menu.getSelectedIndex(),
-                           menu.firstItemX,
-                           menu.selector + str(menu.getSelected()),
-                           curses.A_STANDOUT
-                           )
+        if menu.getSelectedIndex() >= 0:
+            self.screen.addstr(menu.firstItemY + menu.getSelectedIndex(),
+                               menu.firstItemX,
+                               menu.selector + str(menu.getSelected()),
+                               curses.A_STANDOUT
+                               )
             #if len(cleanStr) > 0:
             #    endLine = menu.firstItemX + len(menu.selector) + len(str(item))
             #    self.screen.addstr(menu.firstItemY + index, endLine, cleanStr)
-        self.screen.addstr(menu.firstItemY + menu.getPreviousIndex(),
-                           menu.firstItemX,
-                           len(menu.selector)*" " + str(menu.getPrevious()))
+        if menu.getPreviousIndex() >= 0 :
+            self.screen.addstr(menu.firstItemY + menu.getPreviousIndex(),
+                               menu.firstItemX,
+                               len(menu.selector)*" " + str(menu.getPrevious()))
 
     def print_tags(ecran, x, y, tache):
         ltTags = tache.get_tags()

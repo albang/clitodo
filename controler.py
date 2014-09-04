@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from clitodo import View
 from todo import Tache, Tag
-from menu import Menu, TagMenu, MultiMenu, MagicIndex
+from menu import TacheMenu, TagMenu, MultiMenu, MagicIndex, TacheTagMenu
 import curses
 import logging
 
@@ -14,6 +14,7 @@ class Controler(object):
         self.mIndex = MagicIndex(0)
         logging.basicConfig(filename='example.log', level=logging.DEBUG)
         tagToHide = []
+        Tag.hidedTag.append(Tag().ajouter(name="Archive"))
 
     def addMenu(self, menu):
         self.menus.append(menu)
@@ -39,9 +40,10 @@ class Controler(object):
         return(self.menus[self.mIndex.getCurrent()])
 
     def start(self):
-
-        self.addMenu(Menu(items=Tache().get_tache_to_show()))
-        self.addMenu(TagMenu(items=Tag().get_tags()))
+        tagMenu = TagMenu(items=Tag().get_tags())
+        tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-30)
+        self.addMenu(TacheMenu(items=Tache().get_tache_to_show()))
+        self.addMenu(tagMenu)
         self.packMenu()
         self.myWindow.main_window(self.menus)
         while True:
@@ -51,20 +53,22 @@ class Controler(object):
                 exit(0)
             elif event == curses.KEY_DOWN:
                 self.menus[self.mIndex.getCurrent()].moveDown()
-                self.myWindow.main_window(self.menus)
                 self.myWindow.redraw_menu(self.currentMenu)
             elif event == curses.KEY_UP:
                 self.menus[self.mIndex.getCurrent()].moveUp()
-                self.myWindow.main_window(self.menus)
                 self.myWindow.redraw_menu(self.currentMenu)
             elif event == curses.KEY_RIGHT:
                 self.menus[self.mIndex.getCurrent()].noSelection()
-                self.menus[self.mIndex.next()].selection()
-                self.myWindow.main_window(self.menus)
+                self.myWindow.redraw_menu(self.currentMenu)
+                self.menus[self.mIndex.goNext()].selection()
+                self.myWindow.redraw_menu(self.currentMenu)
+                #self.myWindow.main_window(self.menus)
             elif event == curses.KEY_LEFT:
                 self.menus[self.mIndex.getCurrent()].noSelection()
-                self.menus[self.mIndex.previous()].selection()
-                self.myWindow.main_window(self.menus)
+                self.myWindow.redraw_menu(self.currentMenu)
+                self.menus[self.mIndex.goPrevious()].selection()
+                self.myWindow.redraw_menu(self.currentMenu)
+                #self.myWindow.main_window(self.menus)
             elif event == 10:  # enter key
                 logging.debug("Enter Pressed")
                 x, y = self.currentMenu.getSelectedPosition()
@@ -76,8 +80,10 @@ class Controler(object):
                 self.myWindow.print_menu(actionMenu)
                 self.popUpMenu(actionMenu)
                 self.clearMenu()
-                self.addMenu(Menu(items=Tache().get_tache_to_show()))
-                self.addMenu(TagMenu(items=Tag().get_tags()))
+                tagMenu = TagMenu(items=Tag().get_tags())
+                tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-30)
+                self.addMenu(TacheMenu(items=Tache().get_tache_to_show()))
+                self.addMenu(tagMenu)
                 self.packMenu()
                 self.myWindow.main_window(self.menus)
 
