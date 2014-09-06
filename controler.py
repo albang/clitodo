@@ -4,6 +4,7 @@ from todo import Tache, Tag
 from menu import TacheMenu, TagMenu, MultiMenu, MagicIndex, TacheTagMenu
 import curses
 import logging
+from datetime import datetime
 
 
 class Controler(object):
@@ -41,7 +42,7 @@ class Controler(object):
 
     def start(self):
         tagMenu = TagMenu(items=Tag().get_tags())
-        tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-30)
+        tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-36)
         self.addMenu(TacheMenu(items=Tache().get_tache_to_show()))
         self.addMenu(tagMenu)
         self.packMenu()
@@ -69,6 +70,9 @@ class Controler(object):
                 self.menus[self.mIndex.goPrevious()].selection()
                 self.myWindow.redraw_menu(self.currentMenu)
                 #self.myWindow.main_window(self.menus)
+            elif event == ord("A"):
+                newTache = self.myWindow.print_ajouter_tache()
+                Tache().ajouter_tache(newTache, datetime.now())
             elif event == 10:  # enter key
                 logging.debug("Enter Pressed")
                 x, y = self.currentMenu.getSelectedPosition()
@@ -81,7 +85,7 @@ class Controler(object):
                 self.popUpMenu(actionMenu)
                 self.clearMenu()
                 tagMenu = TagMenu(items=Tag().get_tags())
-                tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-30)
+                tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-36)
                 self.addMenu(TacheMenu(items=Tache().get_tache_to_show()))
                 self.addMenu(tagMenu)
                 self.packMenu()

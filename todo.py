@@ -65,6 +65,7 @@ class Tache(Model):
             is_done=False
         )
         current_tache.save()
+        current_tache.ajoute_tag(ptTag=Tag().ajouter(name="undone"))
 
     def count_tache_undone(cls):
         return(Tache.select().where(Tache.is_done == False).count())
@@ -106,7 +107,7 @@ class Tache(Model):
         except Exception as e:
             logging.error(e)
 
-    def deleteTag(self,tagName="caca"):
+    def deleteTag(self,tagName="test"):
         try:
             delTag = TacheTag.get(tag=Tag().ajouter(name=tagName),tache=self)
             delTag.delete_instance()

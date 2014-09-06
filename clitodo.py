@@ -166,6 +166,24 @@ class View(object):
         rectangle(self.screen, tlY, tlX, drY, drX)
         self.screen.refresh()
 
+    def print_ajouter_tache(self):
+        editwin = curses.newwin(1,
+                                self.max["x"]-6,
+                                self.max["y"]-4,
+                                1
+                                )
+        rectangle(self.screen,
+                  self.screen.getmaxyx()[0]-5,
+                  0, self.max["y"]-3,
+                  self.max["x"]-5)
+        self.screen.refresh()
+        box = Textbox(editwin)
+        # Let the user edit until Ctrl-G is struck.
+        box.edit()
+        # Get resulting contents
+        message = box.gather()
+        return(message)
+
     def print_bottom_msg(self):
         bottom_menu = ("A for Add;" +
                        "Q For Quit;" +
