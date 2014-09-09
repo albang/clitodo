@@ -93,20 +93,20 @@ class View(object):
             tagsMenus = menu.getSubMenu()
             logging.debug("[print_item] TAILLLEEEEEEEE" + str(len(tagsMenus)) +
                           "item" + str(indice))
-            self.print_tacheTagMenu( tagsMenus[indice])
+            self.print_tacheTagMenu(tagsMenus[indice])
             #self.print_item(menu.getSubMenu()[indice], item, indice)
 
-    def print_tacheTagMenu(self, menu):
-        if menu.getMenuLength() > 0:
+    def print_tacheTagMenu(self, tacheTagMenu):
+        if tacheTagMenu.getMenuLength() > 0:
             i = 0
-            logging.debug("[print_item] TAILLLEEEEEEEE"+ str(len(menu.getItems())))
-            for item in menu.getItems():
-                logging.debug("[print_item] TACHTAG ")
-                self.screen.addstr(menu.getFirstItemY() + i,
-                                   menu.getFirstItemX(), " ")
-                x, y = menu.getItemPosition(i)
-                logging.debug("[print_item] dbg2 x : "+ str(x) + " y :" + str(y))
-                self.screen.addstr(y, x, item.name, curses.color_pair(13))
+            for item in tacheTagMenu.getItems():
+                self.screen.addstr(tacheTagMenu.getFirstItemY() + i,
+                                   tacheTagMenu.getFirstItemX(), " ")
+                x, y = tacheTagMenu.getItemPosition(i)
+                if i == tacheTagMenu.getSelectedIndex():
+                    self.screen.addstr(y, x, ">"+item.name, curses.color_pair(13))
+                else:
+                    self.screen.addstr(y, x, " "+item.name, curses.color_pair(13))
                 i += 1
 
     def print_tag_menu(self, menu):
@@ -167,6 +167,26 @@ class View(object):
         self.screen.refresh()
 
     def print_ajouter_tache(self):
+        self.screen.addstr(self.max["y"]-6, 1,"Ajouter une tache :")
+        editwin = curses.newwin(1,
+                                self.max["x"]-6,
+                                self.max["y"]-4,
+                                1
+                                )
+        rectangle(self.screen,
+                  self.screen.getmaxyx()[0]-5,
+                  0, self.max["y"]-3,
+                  self.max["x"]-5)
+        self.screen.refresh()
+        box = Textbox(editwin)
+        # Let the user edit until Ctrl-G is struck.
+        box.edit()
+        # Get resulting contents
+        message = box.gather()
+        return(message)
+
+    def print_ajouter_tag(self):
+        self.screen.addstr(self.max["y"]-6, 1,"Ajouter un TAG:")
         editwin = curses.newwin(1,
                                 self.max["x"]-6,
                                 self.max["y"]-4,

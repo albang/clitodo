@@ -7,7 +7,6 @@ from peewee import *
 from datetime import datetime
 import logging
 database = SqliteDatabase(':tache:')  # Create a database instance.
-
 logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
 class Tache(Model):
@@ -26,28 +25,29 @@ class Tache(Model):
         return(taches)
 
     def get_tache_to_show(self):
+        taskToShow = []
         if len(Tag.hidedTag):
             #taches = Tache.select().join(TacheTag).join(Tag).where(Tache.id == self.id)
-            hideAll=Tag().ajouter(name="Archive")
             idList = []
-            archivedTask = []
-            taskToShow = []
+            
             for tag in Tag().get_tags():
                 idList.append(tag.id)
             for tag in Tag.hidedTag:
                 idList.remove(tag.id)
-            #taches = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id != Tag.hidedTag[0].id)
-            tachesAcacher = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id == hideAll.id)
-            for tache in tachesAcacher:
-                archivedTask.append(tache.id)
             try:
                 taches = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id << idList)
             except Exception as e:
                 logging.debug("Querysoucy req # " + e + " #")
-
-            for tache in taches:
-                if not tache.id in archivedTask:
-                    taskToShow.append(tache)
+            hideAll = Tag().ajouter(name="Archive")
+            if hideAll in Tag.hidedTag:
+                archivedTask = []
+                #taches = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id != Tag.hidedTag[0].id)
+                tachesAcacher = Tache.select(Tache).distinct().join(TacheTag).join(Tag).where(Tag.id == hideAll.id)
+                for tache in tachesAcacher:
+                    archivedTask.append(tache.id)
+                for tache in taches:
+                    if not tache.id in archivedTask:
+                        taskToShow.append(tache)
 
         else:
             taches = Tache.select(Tache)
@@ -86,6 +86,10 @@ class Tache(Model):
         self.save()
 
     def delete2(self):
+
+        delTags = TacheTag.select().join(Tache).where(Tache.id == self.id)
+        for delTag in delTags:
+            delTag.delete_instance()
         self.delete_instance()
 
     def stringmoica(self, isSelected=False):
@@ -167,6 +171,10 @@ class Tache(Model):
                       }},
                       {'Tagguer': {
                        'action': self.tagCaca,
+                       'show': True,
+                       }},
+                      {'Delete': {
+                       'action': self.delete2,
                        'show': True,
                        }},
                       {'Delete Tag': {
@@ -285,8 +293,8 @@ class Tag(Model):
                       {'Delete Tag': {
                        'action': self.deleteTag,
                        'show': True,
-                       }
-                       }]
+                       }},
+                       ]
         if self in Tag.hidedTag:
             listAction.append({'show': {
                               'action': self.change_status,

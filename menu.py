@@ -60,9 +60,10 @@ class Menu(object):
         return(self.items[self.selectedIndex])
 
     def getPrevious(self):
-        logging.info("[menu][GetSelected] " +
-                     self.title + " " + str(self.selectedIndex))
-        return(self.items[self.previousIndex])
+        if self.menuLength > 1:
+            logging.info("[menu][GetSelected] " +
+                         self.title + " " + str(self.selectedIndex))
+            return(self.items[self.previousIndex])
 
     def getSelectedIndex(self):
         return(self.selectedIndex)
