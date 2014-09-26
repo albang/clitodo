@@ -286,11 +286,7 @@ class Tag(Model):
         return(self.name+"("+str(self.get_nb_tache())+")")
 
     def getAction(self):
-        listAction = [{'Archiver': {
-                      'action': self.archiveMe,
-                      'show': True,
-                      }},
-                      {'Delete Tag': {
+        listAction = [{'Delete Tag': {
                        'action': self.deleteTag,
                        'show': True,
                        }},

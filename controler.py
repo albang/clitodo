@@ -73,6 +73,9 @@ class Controler(object):
             elif event == ord("A"):
                 newTache = self.myWindow.print_ajouter_tache()
                 Tache().ajouter_tache(newTache, datetime.now())
+            elif event == ord("G"):
+                newTache = self.myWindow.print_ajouter_tag()
+                Tache().ajouter_tache()
             elif event == 10:  # enter key
                 logging.debug("Enter Pressed")
                 x, y = self.currentMenu.getSelectedPosition()
@@ -99,10 +102,10 @@ class Controler(object):
                 exit(0)
             if event == curses.KEY_DOWN:
                 menu.moveDown()
-                self.myWindow.print_menu(menu)
+                self.myWindow.redraw_menu(menu)
             elif event == curses.KEY_UP:
                 menu.moveUp()
-                self.myWindow.print_menu(menu)
+                self.myWindow.redraw_menu(menu)
             elif event == 10:  # enter key
                 menu.performAction()
                 menu.noSelection()

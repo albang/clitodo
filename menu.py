@@ -127,6 +127,12 @@ class Menu(object):
                (self.firstItemY + index)
                )
 
+    def setFirstItemX(self, newX):
+        self.firstItemX = newX
+
+    def setFirstitemY(self, newY):
+        self.firstItemY = newY
+
 
 class TacheMenu(Menu):
     """docstring for TacheMenu"""

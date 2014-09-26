@@ -117,6 +117,25 @@ class View(object):
 
     def print_action_menu(self, menu):
         tX, tY, dX, dY = menu.entoureMe()
+        #logging.INFO("print_action_menu Max X" + self.getMaxXY()["x"] +
+        #             " Max Y"+self.getMaxXY()["y"])
+        logging.info("print_action_menu :" +
+                     " Top x " + str(tX) +
+                     " Top Y" + str(tY) +
+                     " Down X" + str(dX) +
+                     " Down Y" + str(dY) +
+                     " Max Y"+str(self.getMaxXY()["y"]))
+        #si le bas du rectangle dépace la fenetre
+        if dY >= self.getMaxXY()["y"]:
+            tY = tY - (dY - self.getMaxXY()["y"] + 1)
+            dY = dY - (dY - self.getMaxXY()["y"] + 1)
+            menu.setTopY(tY)
+        logging.info("print_action_menu :" +
+                     " Top x " + str(tX) +
+                     " Top Y" + str(tY) +
+                     " Down X" + str(dX) +
+                     " Down Y" + str(dY) +
+                     " Max Y"+str(self.getMaxXY()["y"]))
         self.print_rectangle(tX, tY, dX, dY)
         self.screen.addstr(menu.topY, menu.topX, menu.title)
         for indice, item in enumerate(list(menu.items)):
