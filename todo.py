@@ -85,11 +85,11 @@ class Tache(Model):
             self.deleteTag("undone")
         self.save()
 
-    def delete2(self):
-
-        delTags = TacheTag.select().join(Tache).where(Tache.id == self.id)
-        for delTag in delTags:
-            delTag.delete_instance()
+    def deleteTache(self):
+        logging.info("deleteTache ID "+str(self.id)+" desc : "+self.description)
+        for delTag in self.get_tags():
+            logging.info("deleteTache  tag "+str(delTag.id))
+            self.deleteTag(delTag.name)
         self.delete_instance()
 
     def stringmoica(self, isSelected=False):
@@ -118,7 +118,7 @@ class Tache(Model):
         except Exception as e:
             logging.warning(e)
 
-    def tagCaca(self):
+    def tagTest(self):
         logging.info("[pb1]"+self.description+" Tag test ")
         self.ajoute_tag(ptTag=Tag().ajouter(name="test"))
         pass
@@ -170,11 +170,11 @@ class Tache(Model):
                       'show': True,
                       }},
                       {'Tagguer': {
-                       'action': self.tagCaca,
+                       'action': self.tagTest,
                        'show': True,
                        }},
                       {'Delete': {
-                       'action': self.delete2,
+                       'action': self.deleteTache,
                        'show': True,
                        }},
                       {'Delete Tag': {
@@ -324,7 +324,7 @@ class Tag(Model):
         pass
 
     def deleteTag(self):
-        if self.name != "done" and self.name != "undone":
+        if self.name not in ["done", "undone", "Archive"]:
             self.delete_instance(True)
         else:
             logging.error("You can't delete system TAG !"+

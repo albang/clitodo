@@ -86,13 +86,13 @@ class View(object):
             :type menu: Menu
         """
         tX, tY, dX, dY = menu.entoureMe()
-        self.print_rectangle(tX, tY, dX + 3, dY)
+        # + 12t o be patched :
+        # Probleme : tg length
+        self.print_rectangle(tX, tY, dX + 12, dY)
         self.screen.addstr(menu.topY, menu.topX, menu.title)
         for indice, item in enumerate(list(menu.items)):
             self.print_item(menu, item, indice)
             tagsMenus = menu.getSubMenu()
-            logging.debug("[print_item] TAILLLEEEEEEEE" + str(len(tagsMenus)) +
-                          "item" + str(indice))
             self.print_tacheTagMenu(tagsMenus[indice])
             #self.print_item(menu.getSubMenu()[indice], item, indice)
 
@@ -106,7 +106,9 @@ class View(object):
                 if i == tacheTagMenu.getSelectedIndex():
                     self.screen.addstr(y, x, ">"+item.name, curses.color_pair(13))
                 else:
-                    self.screen.addstr(y, x, " "+item.name, curses.color_pair(13))
+                    self.screen.addstr(y, x, " ")
+                    self.screen.addstr(y, x+1,item.name, curses.color_pair(13))
+                
                 i += 1
 
     def print_tag_menu(self, menu):

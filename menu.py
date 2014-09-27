@@ -148,6 +148,7 @@ class TacheMenu(Menu):
             logging.debug("[TacheMenu] JE LOAD LES TAGS")
             tmpMenu = TacheTagMenu(item.get_tags())
             tmpMenu.setTopX(len(str(self.items[i])) + len(self.selector) + self.firstItemX)
+            tmpMenu.noSelection()
             tmpMenu.setTopY(self.getFirstItemY() + i)
             self.subMenus.append(tmpMenu)
             i += 1
