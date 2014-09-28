@@ -144,18 +144,19 @@ class View(object):
             self.print_item(menu, item, indice)
 
     def print_item(self, menu, item, index):
-        #cleanStr = (menu.maxItemWidth - len(str(item)))*" "
-        ##logging.debug("[print_item] item "+str(index))
+        cleanStr = (menu.maxItemWidth - len(str(item)))*" "
+        #logging.debug("[print_item] item "+str(index))
         x, y = menu.getItemPosition(index)
         if menu.isSelected(index):
             self.screen.addstr(y, x, menu.selector + str(item),
                                curses.A_STANDOUT
                                )
-            #if len(cleanStr) > 0:
-            #   endLine = menu.firstItemX + len(menu.selector) + len(str(item))
-            #  self.screen.addstr(menu.firstItemY + index, endLine, cleanStr)
+            
         else:
             self.screen.addstr(y, x, len(menu.selector)*" " + str(item))
+        if len(cleanStr) > 0:
+                endLine = menu.firstItemX + len(menu.selector) + len(str(item))
+                self.screen.addstr(menu.firstItemY + index, endLine, cleanStr,curses.color_pair(1))
 
         self.screen.refresh()
 

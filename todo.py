@@ -86,7 +86,8 @@ class Tache(Model):
         self.save()
 
     def deleteTache(self):
-        logging.info("deleteTache ID "+str(self.id)+" desc : "+self.description)
+        logging.info("deleteTache ID "+str(self.id) +
+                     " desc : " + self.description)
         for delTag in self.get_tags():
             logging.info("deleteTache  tag "+str(delTag.id))
             self.deleteTag(delTag.name)
@@ -111,9 +112,9 @@ class Tache(Model):
         except Exception as e:
             logging.error(e)
 
-    def deleteTag(self,tagName="test"):
+    def deleteTag(self, tagName="test"):
         try:
-            delTag = TacheTag.get(tag=Tag().ajouter(name=tagName),tache=self)
+            delTag = TacheTag.get(tag=Tag().ajouter(name=tagName), tache=self)
             delTag.delete_instance()
         except Exception as e:
             logging.warning(e)
