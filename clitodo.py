@@ -127,7 +127,7 @@ class View(object):
                      " Down X" + str(dX) +
                      " Down Y" + str(dY) +
                      " Max Y"+str(self.getMaxXY()["y"]))
-        #si le bas du rectangle dépace la fenetre
+        #si le bas du rectangle deplace la fenetre
         if dY >= self.getMaxXY()["y"]:
             tY = tY - (dY - self.getMaxXY()["y"] + 1)
             dY = dY - (dY - self.getMaxXY()["y"] + 1)
@@ -148,14 +148,14 @@ class View(object):
         #logging.debug("[print_item] item "+str(index))
         x, y = menu.getItemPosition(index)
         if menu.isSelected(index):
-            self.screen.addstr(y, x, menu.selector + str(item),
+            self.screen.addstr(y, x, menu.getSelector() + str(item),
                                curses.A_STANDOUT
                                )
             
         else:
-            self.screen.addstr(y, x, len(menu.selector)*" " + str(item))
+            self.screen.addstr(y, x, len(menu.getSelector())*" " + str(item))
         if len(cleanStr) > 0:
-                endLine = menu.firstItemX + len(menu.selector) + len(str(item))
+                endLine = menu.firstItemX + len(menu.getSelector()) + len(str(item))
                 self.screen.addstr(menu.firstItemY + index, endLine, cleanStr,curses.color_pair(1))
 
         self.screen.refresh()
@@ -164,16 +164,16 @@ class View(object):
         if menu.getSelectedIndex() >= 0:
             self.screen.addstr(menu.firstItemY + menu.getSelectedIndex(),
                                menu.firstItemX,
-                               menu.selector + str(menu.getSelected()),
+                               menu.getSelector() + str(menu.getSelected()),
                                curses.A_STANDOUT
                                )
             #if len(cleanStr) > 0:
-            #    endLine = menu.firstItemX + len(menu.selector) + len(str(item))
+            #    endLine = menu.firstItemX + len(menu.getSelector()) + len(str(item))
             #    self.screen.addstr(menu.firstItemY + index, endLine, cleanStr)
         if menu.getPreviousIndex() >= 0 :
             self.screen.addstr(menu.firstItemY + menu.getPreviousIndex(),
                                menu.firstItemX,
-                               len(menu.selector)*" " + str(menu.getPrevious()))
+                               len(menu.getSelector())*" " + str(menu.getPrevious()))
 
     def print_tags(ecran, x, y, tache):
         ltTags = tache.get_tags()
@@ -189,7 +189,7 @@ class View(object):
         self.screen.refresh()
 
     def print_ajouter_tache(self):
-        self.screen.addstr(self.max["y"]-6, 1,"Ajouter une tache :")
+        self.screen.addstr(self.max["y"]-6, 1, "Ajouter une tache :")
         editwin = curses.newwin(1,
                                 self.max["x"]-6,
                                 self.max["y"]-4,
@@ -207,17 +207,18 @@ class View(object):
         message = box.gather()
         return(message)
 
-    def print_ajouter_tag(self):
-        self.screen.addstr(self.max["y"]-6, 1,"Ajouter un TAG:")
-        editwin = curses.newwin(1,
-                                self.max["x"]-6,
-                                self.max["y"]-4,
-                                1
+    def print_ajouter_tag(self, tagMenu):
+        tagMenu.getLastItemY()
+        newTagStr = "New TAG >"
+        self.screen.addstr(tagMenu.getLastItemY(),
+                           tagMenu.getFirstItemX()+len(tagMenu.getSelector())-len(newTagStr),
+                           newTagStr)
+        editwin = curses.newwin(
+                                1,
+                                self.max["x"]-tagMenu.getFirstItemX()+len(tagMenu.getSelector()),
+                                tagMenu.getLastItemY(),
+                                tagMenu.getFirstItemX()+len(tagMenu.getSelector()),
                                 )
-        rectangle(self.screen,
-                  self.screen.getmaxyx()[0]-5,
-                  0, self.max["y"]-3,
-                  self.max["x"]-5)
         self.screen.refresh()
         box = Textbox(editwin)
         # Let the user edit until Ctrl-G is struck.

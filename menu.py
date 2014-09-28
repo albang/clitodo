@@ -24,16 +24,26 @@ class Menu(object):
 
     def moveUp(self):
         logging.debug("[menu]Move up")
-        self.previousIndex = self.selectedIndex
-        self.selectedIndex -= 1
-        if self.selectedIndex < 0:
-            self.selectedIndex = self.menuLength - 1
+        if self.menuLength > 0:
+            self.previousIndex = self.selectedIndex
+            self.selectedIndex -= 1
+            if self.selectedIndex < 0:
+                self.selectedIndex = self.menuLength - 1
+        else:
+            logging.info("[menu]Move up is impossible\
+                          Menu is empty")
+        return(self.menuLength > 0)
 
     def moveDown(self):
         logging.debug("[menu]Move down")
-        self.previousIndex = self.selectedIndex
-        self.selectedIndex += 1
-        self.selectedIndex %= self.menuLength
+        if self.menuLength > 0:
+            self.previousIndex = self.selectedIndex
+            self.selectedIndex += 1
+            self.selectedIndex %= self.menuLength
+        else:
+            logging.info("[menu]Move down is impossible\
+                          Menu is empty")
+        return(self.menuLength > 0)
 
     def moveLeft(self):
         pass
@@ -81,8 +91,7 @@ class Menu(object):
         return(len(str(self.items[self.selectedIndex])))
 
     def performAction(self):
-        self.action[self.getSelected()]()
-        pass
+        return(self.action[self.getSelected()]())
 
     def setTopX(self, topX):
         self.topX = topX
@@ -103,6 +112,9 @@ class Menu(object):
 
     def getTopY(self):
         return(self.topY)
+
+    def getSelector(self):
+        return(self.selector)
 
     @property
     def maxItemWidth(self):
@@ -130,8 +142,16 @@ class Menu(object):
     def setFirstItemX(self, newX):
         self.firstItemX = newX
 
-    def setFirstitemY(self, newY):
+    def setFirstItemY(self, newY):
         self.firstItemY = newY
+
+    def getLastItemY(self):
+        return(self.firstItemY + self.menuLength)
+
+    def reload(self,items):
+        self.items = items
+        self.menuLength = items.count()
+
 
 
 class TacheMenu(Menu):

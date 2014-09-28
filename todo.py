@@ -306,6 +306,10 @@ class Tag(Model):
                               'action': self.cancel,
                               'show': True,
                               }})
+        listAction.append({'Add Tag': {
+                              'action': self.addTag,
+                              'show': True,
+                              }})
         return(listAction)
 
     def cancel(self):
@@ -330,6 +334,10 @@ class Tag(Model):
         else:
             logging.error("You can't delete system TAG !"+
                           "That's not cool for me :(")
+
+    def addTag(self):
+        return("AddTag")
+
     def __str__(self):
         return(Tag.renderer.render(self))
 

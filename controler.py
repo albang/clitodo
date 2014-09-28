@@ -13,6 +13,7 @@ class Controler(object):
         self.myWindow = View()
         self.menus = []
         self.mIndex = MagicIndex(0)
+
         logging.basicConfig(filename='example.log', level=logging.DEBUG)
         tagToHide = []
         Tag.hidedTag.append(Tag().ajouter(name="Archive"))
@@ -42,6 +43,7 @@ class Controler(object):
 
     def start(self):
         tagMenu = TagMenu(items=Tag().get_tags())
+        self.tagMenu = tagMenu
         tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-36)
         self.addMenu(TacheMenu(items=Tache().get_tache_to_show()))
         self.addMenu(tagMenu)
@@ -53,11 +55,11 @@ class Controler(object):
                 self.myWindow.stop()
                 exit(0)
             elif event == curses.KEY_DOWN:
-                self.menus[self.mIndex.getCurrent()].moveDown()
-                self.myWindow.redraw_menu(self.currentMenu)
+                if self.menus[self.mIndex.getCurrent()].moveDown():
+                    self.myWindow.redraw_menu(self.currentMenu)
             elif event == curses.KEY_UP:
-                self.menus[self.mIndex.getCurrent()].moveUp()
-                self.myWindow.redraw_menu(self.currentMenu)
+                if self.menus[self.mIndex.getCurrent()].moveUp():
+                    self.myWindow.redraw_menu(self.currentMenu)
             elif event == curses.KEY_RIGHT:
                 self.menus[self.mIndex.getCurrent()].noSelection()
                 self.myWindow.redraw_menu(self.currentMenu)
@@ -107,7 +109,11 @@ class Controler(object):
                 menu.moveUp()
                 self.myWindow.redraw_menu(menu)
             elif event == 10:  # enter key
-                menu.performAction()
+                retour=menu.performAction()
+                if retour == "AddTag":
+                    newTag=self.myWindow.print_ajouter_tag(self.tagMenu)
+                    Tag().ajouter(newTag)
+                    self.tagMenu.reload(Tag().get_tags())
                 menu.noSelection()
                 break
 
