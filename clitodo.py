@@ -185,7 +185,18 @@ class View(object):
                 i = len(tag.name) + 1
 
     def print_rectangle(self, tlX, tlY, drX, drY):
-        rectangle(self.screen, tlY, tlX, drY, drX)
+        logging.info("print_rectangle :" +
+                     " Top x " + str(tlX) +
+                     " Top Y" + str(tlY) +
+                     " Down X" + str(drX) +
+                     " Down Y" + str(drY) +
+                     " Max Y"+str(self.getMaxXY()["y"]) +
+                     " Max X"+str(self.getMaxXY()["x"])
+                     )
+        try:
+            rectangle(self.screen, tlY, tlX, drY, drX)
+        except Exception as e:
+            logging.info(e)
         self.screen.refresh()
 
     def print_ajouter_tache(self):
