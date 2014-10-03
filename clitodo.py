@@ -58,8 +58,6 @@ class View(object):
             :returns: None
         """
         self.screen.clear()
-        #self.print_rectangle(99, 0, 115, 6)
-        #self.print_rectangle(2, 0, 96, 20)
         for menu in menus:
 
             self.print_menu(menu)
@@ -104,16 +102,22 @@ class View(object):
                                    tacheTagMenu.getFirstItemX(), " ")
                 x, y = tacheTagMenu.getItemPosition(i)
                 if i == tacheTagMenu.getSelectedIndex():
-                    self.screen.addstr(y, x, ">"+item.name, curses.color_pair(13))
+                    self.screen.addstr(y, x, ">"+item.name,
+                                       curses.color_pair(13)
+                                       )
                 else:
                     self.screen.addstr(y, x, " ")
-                    self.screen.addstr(y, x+1,item.name, curses.color_pair(13))
-                
+                    self.screen.addstr(y,
+                                       x+1,
+                                       item.name,
+                                       curses.color_pair(13)
+                                       )
                 i += 1
 
     def print_tag_menu(self, menu):
         self.screen.addstr(menu.topY, menu.topX, menu.title)
-
+        tX, tY, dX, dY = menu.entoureMe()
+        self.print_rectangle(tX, tY, dX + 12, dY)
         for indice, item in enumerate(list(menu.items)):
             self.print_item(menu, item, indice)
 
@@ -139,7 +143,7 @@ class View(object):
                      " Down Y" + str(dY) +
                      " Max Y"+str(self.getMaxXY()["y"]))
         self.print_rectangle(tX, tY, dX, dY)
-        self.screen.addstr(menu.topY, menu.topX, menu.title)
+        self.screen.addstr(menu.topY, menu.topX, menu.getTitle())
         for indice, item in enumerate(list(menu.items)):
             self.print_item(menu, item, indice)
 
@@ -156,7 +160,11 @@ class View(object):
             self.screen.addstr(y, x, len(menu.getSelector())*" " + str(item))
         if len(cleanStr) > 0:
                 endLine = menu.firstItemX + len(menu.getSelector()) + len(str(item))
-                self.screen.addstr(menu.firstItemY + index, endLine, cleanStr,curses.color_pair(1))
+                self.screen.addstr(menu.firstItemY + index, 
+                                   endLine,
+                                   cleanStr,
+                                   curses.color_pair(1)
+                                   )
 
         self.screen.refresh()
 

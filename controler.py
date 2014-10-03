@@ -114,6 +114,9 @@ class Controler(object):
                     newTag=self.myWindow.print_ajouter_tag(self.tagMenu)
                     Tag().ajouter(newTag)
                     self.tagMenu.reload(Tag().get_tags())
+                elif retour == "TagMe":
+                    
+                    self.tagMenu.reload(Tag().get_tags())
                 menu.noSelection()
                 break
 

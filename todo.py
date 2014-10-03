@@ -124,6 +124,9 @@ class Tache(Model):
         self.ajoute_tag(ptTag=Tag().ajouter(name="test"))
         pass
 
+    def tagMe(self):
+        return("tagMe")
+
     def get_tags(self):
         maListe = []
         for tag in (Tag.select().join(TacheTag).join(Tache).where(Tache.id == self.id)):

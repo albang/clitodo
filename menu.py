@@ -2,7 +2,11 @@
 import logging
 
 class Menu(object):
-    """docstring for Menu"""
+    """docstring for Menu
+
+     This class is the mother class of menu
+
+    """
     title = "Menu"
     topX = 4
     topY = 0
@@ -17,12 +21,21 @@ class Menu(object):
     logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
     def getMenuLength(self):
+        """
+            this function return the number of his items
+        """ 
         return(self.menuLength)
 
     def getItems(self):
+        """
+            this function return all items 
+        """ 
         return(self.items)
 
     def moveUp(self):
+        """
+            this function select the item before in the list 
+        """ 
         logging.debug("[menu]Move up")
         if self.menuLength > 0:
             self.previousIndex = self.selectedIndex
@@ -35,6 +48,9 @@ class Menu(object):
         return(self.menuLength > 0)
 
     def moveDown(self):
+        """
+            this function select the item after in the list 
+        """ 
         logging.debug("[menu]Move down")
         if self.menuLength > 0:
             self.previousIndex = self.selectedIndex
@@ -48,76 +64,151 @@ class Menu(object):
     def moveLeft(self):
         pass
 
-    def moveRigt(self):
+    def moveRight(self):
         pass
 
     def isSelected(self, index):
-            return(index == self.selectedIndex)
+        """
+            this function return true if the index is sectected
+            :param arg1: index
+            :type arg1: int
+        """
+        return(index == self.selectedIndex)
 
     def noSelection(self):
-        logging.debug("[" + self.title + "] noselection index"+str(self.selectedIndex))
+        """
+            this function deselect the item
+        """
+        logging.debug("[" + self.title + "] noselection index" +
+                      str(self.selectedIndex))
         self.previousIndex = self.selectedIndex
         self.selectedIndex = -1
 
     def selection(self, index=0):
-        self.previousIndex = self.selectedIndex
-        self.selectedIndex = index
-        logging.debug("[" + self.title + "] selection index"+str(self.selectedIndex))
+        """
+            this function select the item and deal with the previous item
+            :param arg1: index
+            :type arg1: int
+        """
+        if index >= self.menuLength:
+            logging.error("[menu][selection] index (" +
+                          str(index) + ")is out of range(" +
+                          str(menuLength) +
+                          ")")
+        else:
+            self.previousIndex = self.selectedIndex
+            self.selectedIndex = index
+            logging.debug("[" + self.title + "] selection index" +
+                          str(self.selectedIndex))
 
     def getSelected(self):
+        """
+            this function return the selected item/object
+        """
         logging.info("[menu][GetSelected] " +
                      self.title + " " + str(self.selectedIndex))
         return(self.items[self.selectedIndex])
 
     def getPrevious(self):
-        if self.menuLength > 1:
+        """
+            this function return the selected previous item/object (not good)
+        """
+        if self.menuLength > 1 and self.previousIndex != -1:
             logging.info("[menu][GetSelected] " +
                          self.title + " " + str(self.selectedIndex))
             return(self.items[self.previousIndex])
 
     def getSelectedIndex(self):
+        """
+            this function return the selected index
+        """
         return(self.selectedIndex)
 
     def getPreviousIndex(self):
+        """
+            this function return the selected previous selected index
+        """
         return(self.previousIndex)
 
     def getSelectedPosition(self):
+        """ is it compliant with getFirstItemY & getFirstItemY ?
+            it can be better
+        """
         return(
                (self.topX + self.padding + len(self.selector)),
                (self.topY + 1 + self.selectedIndex)
                )
 
     def getItemLength(self):
+        """
+            This function return the lenght of str representation of the selected index
+        """
         return(len(str(self.items[self.selectedIndex])))
 
     def performAction(self):
+        """
+            Tricky function witch permit to do things
+            More to say ... later
+        """
         return(self.action[self.getSelected()]())
 
     def setTopX(self, topX):
+        """
+            This function set the X coordinate of the left corner of the menu
+            And update the First item x (Warning of the selector length)
+        """
         self.topX = topX
         self.firstItemX = self.topX + self.padding
 
     def getTopX(self):
+        """
+            This function get the X coordinate of the left corner of the menu 
+        """
         return(self.topX)
 
     def setTopY(self, topY):
+        """
+            This function set the Y coordinate of the left corner of the menu
+            And update the First item Y
+        """
         self.topY = topY
         self.firstItemY = topY + 1
 
+    def getTopY(self):
+        """
+            This function get the X coordinate of the left corner of the menu
+        """
+        return(self.topY)
+
     def getFirstItemX(self):
+        """
+            This function set the x coordinate of the first item of the menu
+        """
         return(self.firstItemX)
 
     def getFirstItemY(self):
+        """
+            This function set the y coordinate of the first item of the menu
+        """
         return(self.firstItemY)
 
-    def getTopY(self):
-        return(self.topY)
-
     def getSelector(self):
+        """
+            this function return selector of the menu
+        """
         return(self.selector)
+
+    def getTitle(self):
+        """
+            this function return tittle of the menu
+        """
+        return(self.title)
 
     @property
     def maxItemWidth(self):
+        """
+            this property return the biggest length of all items (not good) 
+        """
         maxWidth = 0
         for item in self.items:
             if len(str(item)) > maxWidth:
@@ -125,6 +216,10 @@ class Menu(object):
         return(maxWidth)
 
     def entoureMe(self):
+        """
+            this function return 2 point first one is the top left corner(x,y)
+            and the second is the down right corner 
+        """
         tX = self.firstItemX - len(self.selector)
         tY = self.firstItemY - 1
         dY = self.firstItemY + self.menuLength
@@ -132,23 +227,47 @@ class Menu(object):
         return(tX, tY, dX, dY)
 
     def getSubMenu(self):
+        """
+           is it a kind of  recursive fonction ? no, is not! 
+        """
         return(self.subMenus)
 
     def getItemPosition(self, index):
+        """
+           This function return a tuple of the position (x,y) of a object
+            :param arg1: index
+            :type arg1: int
+        """
         return((self.firstItemX),
                (self.firstItemY + index)
                )
 
     def setFirstItemX(self, newX):
+        """
+           This function can override the setFirstItemX
+           :param arg1: newX
+           :type arg1: int
+        """
         self.firstItemX = newX
 
     def setFirstItemY(self, newY):
+        """
+           This function can override the setFirstItemY
+           :param arg1: newY
+           :type arg1: int
+        """
         self.firstItemY = newY
 
     def getLastItemY(self):
+        """
+           This function can return the next line after the last item 
+        """
         return(self.firstItemY + self.menuLength)
 
-    def reload(self,items):
+    def reload(self, items):
+        """
+           This function reload items menu
+        """
         self.items = items
         self.menuLength = items.count()
 
@@ -228,6 +347,14 @@ class MultiMenu(Menu):
         self.firstItemX = self.topX + self.padding + 1
         self.firstItemY = self.topY
         self.selector = ">"
+
+    class MetaMenu(Menu):
+    """docstring for MetaMenu"""
+
+    def __init__(self, items, topX=0, topY=0, title="Menu"):
+        super(Menu, self).__init__()
+        #blablabla
+
 
 
 class MagicIndex(object):
