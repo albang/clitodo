@@ -348,7 +348,7 @@ class MultiMenu(Menu):
         self.firstItemY = self.topY
         self.selector = ">"
 
-    class MetaMenu(Menu):
+class MetaMenu(Menu):
     """docstring for MetaMenu"""
 
     def __init__(self, items, topX=0, topY=0, title="Menu"):
