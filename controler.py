@@ -26,6 +26,9 @@ class Controler(object):
         self.menus = []
         self.mIndex.setCurrent(0)
 
+    def fonction_avec_aurel(self):
+        print("coucou")
+
     def packMenu(self):
         #pas correct
         #logging.debug("[pack_menu] taille liste"+str(len(self.menus)))
