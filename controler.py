@@ -42,6 +42,8 @@ class Controler(object):
         return(self.menus[self.mIndex.getCurrent()])
 
     def start(self):
+        if Tache().count_tache() == 0 :
+            Tache().ajouter_tache("on saisie une premiere tache",datetime.now())
         tagMenu = TagMenu(items=Tag().get_tags())
         self.tagMenu = tagMenu
         tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-36)
@@ -75,6 +77,8 @@ class Controler(object):
             elif event == ord("A"):
                 newTache = self.myWindow.print_ajouter_tache()
                 Tache().ajouter_tache(newTache, datetime.now())
+                self.menus[0]=TacheMenu(items=Tache().get_tache_to_show())
+                self.myWindow.main_window(self.menus)
             elif event == ord("G"):
                 newTache = self.myWindow.print_ajouter_tag()
                 Tache().ajouter_tache()

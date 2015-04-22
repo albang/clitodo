@@ -6,14 +6,16 @@ I don't know the relevant info i have to put here :/
 from peewee import *
 from datetime import datetime
 import logging
-database = SqliteDatabase(':tache:')  # Create a database instance.
+
 logging.basicConfig(filename='example.log', level=logging.DEBUG)
+
+database = SqliteDatabase(':tache6:')
 
 class Tache(Model):
     description = CharField()
     date_creation = DateTimeField()
-    date_debut = DateTimeField()
-    date_fin = DateTimeField()
+    date_debut = DateTimeField(null = True)
+    date_fin = DateTimeField(null = True)
     is_done = BooleanField()
 
     def get_tache_undone(self):
@@ -66,6 +68,9 @@ class Tache(Model):
         )
         current_tache.save()
         current_tache.ajoute_tag(ptTag=Tag().ajouter(name="undone"))
+
+    def count_tache(cls):
+        return(Tache.select().count())
 
     def count_tache_undone(cls):
         return(Tache.select().where(Tache.is_done == False).count())
@@ -274,7 +279,7 @@ class Tag(Model):
         try:
             monTag = Tag.get(name=name)
             self.id = monTag.id
-        except Exception:
+        except Exception as e:
             monTag = Tag(name=name)
             monTag.save()
         return(monTag)
@@ -451,3 +456,10 @@ class Renderer(object):
                     settings["show"] = True
                     hasChanged = True
         return(hasChanged)
+
+try:
+      # Create a database instance.
+    database.create_tables([Tag,Tache,TacheTag], safe= True)
+except Exception as e:
+    print(e)
+    exit(0)
