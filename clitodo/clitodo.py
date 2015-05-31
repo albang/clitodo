@@ -149,18 +149,19 @@ class View(object):
 
     def print_item(self, menu, item, index):
         cleanStr = (menu.maxItemWidth - len(str(item)))*" "
-        #logging.debug("[print_item] item "+str(index))
+        # logging.debug("[print_item] item "+str(index))
         x, y = menu.getItemPosition(index)
         if menu.isSelected(index):
             self.screen.addstr(y, x, menu.getSelector() + str(item),
                                curses.A_STANDOUT
                                )
-            
         else:
             self.screen.addstr(y, x, len(menu.getSelector())*" " + str(item))
         if len(cleanStr) > 0:
-                endLine = menu.firstItemX + len(menu.getSelector()) + len(str(item))
-                self.screen.addstr(menu.firstItemY + index, 
+                endLine = menu.firstItemX +\
+                          len(menu.getSelector()) +\
+                          len(str(item))
+                self.screen.addstr(menu.firstItemY + index,
                                    endLine,
                                    cleanStr,
                                    curses.color_pair(1)
@@ -175,13 +176,14 @@ class View(object):
                                menu.getSelector() + str(menu.getSelected()),
                                curses.A_STANDOUT
                                )
-            #if len(cleanStr) > 0:
+            # if len(cleanStr) > 0:
             #    endLine = menu.firstItemX + len(menu.getSelector()) + len(str(item))
             #    self.screen.addstr(menu.firstItemY + index, endLine, cleanStr)
-        if menu.getPreviousIndex() >= 0 :
+        if menu.getPreviousIndex() >= 0:
             self.screen.addstr(menu.firstItemY + menu.getPreviousIndex(),
                                menu.firstItemX,
-                               len(menu.getSelector())*" " + str(menu.getPrevious()))
+                               len(menu.getSelector())*" " +
+                               str(menu.getPrevious()))
 
     def print_tags(ecran, x, y, tache):
         ltTags = tache.get_tags()

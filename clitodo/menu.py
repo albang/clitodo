@@ -113,7 +113,7 @@ class Menu(object):
         """
             this function return the selected previous item/object (not good)
         """
-        if self.menuLength > 1 and self.previousIndex != -1:
+        if self.menuLength >= 1 and self.previousIndex != -1:
             logging.info("[menu][GetSelected] " +
                          self.title + " " + str(self.selectedIndex))
             return(self.items[self.previousIndex])

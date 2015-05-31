@@ -1,0 +1,1077 @@
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fab0e8b0fd0>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7fab0e8b0ef0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f131f173fd0>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f131f173ef0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f131f173ef0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f131f173fd0>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f131f173fd0>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f131f173ef0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f131f173ef0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f131f173fd0>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f131f173fd0>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f131f173ef0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f131f173ef0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f131f173fd0>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f131f173fd0>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f131f173ef0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f131f173ef0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f131f173fd0>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+DEBUG:root:[Menu] noselection index-1
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7fcc0ae89ef0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7fcc0ae89ef0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+DEBUG:root:[Menu] noselection index-1
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+DEBUG:root:[Menu] noselection index-1
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+DEBUG:root:[Menu] noselection index-1
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7fcc0ae89ef0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7fcc0ae89ef0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7fcc0ae89f28>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f7d7475a208>
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f7d7475a080>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+INFO:root:[menu][GetSelected] Tags 1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 2
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+INFO:root:[menu][GetSelected] Tags 2
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:root:[Tags] noselection index2
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[menu]Move down
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Tags] noselection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags -1
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:root:[Menu] selection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu 0
+DEBUG:root:[Menu] noselection index0
+INFO:root:[current]Curent menu <menu.TacheMenu object at 0x7f4ef49ec198>
+INFO:root:[menu][GetSelected] Menu -1
+DEBUG:root:[Tags] selection index0
+INFO:root:[current]Curent menu <menu.TagMenu object at 0x7f4ef49effd0>
+INFO:root:[menu][GetSelected] Tags 0
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT name FROM sqlite_master WHERE type = ? ORDER BY name;', ('table',))
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT Count(*) FROM "tache" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 WHERE ("t1"."name" = ?) LIMIT 1', ['Archive'])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:peewee:('SELECT DISTINCT "t1"."id", "t1"."description", "t1"."date_creation", "t1"."date_debut", "t1"."date_fin", "t1"."is_done" FROM "tache" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tache_id") INNER JOIN "tag" AS t3 ON ("t2"."tag_id" = "t3"."id") WHERE ("t3"."id" IN (?, ?, ?))', [2, 3, 4])
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[menu] je suis un menu et jai une taille de1
+DEBUG:root:[TacheMenu] JE LOAD LES TAGS
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") INNER JOIN "tache" AS t3 ON ("t2"."tache_id" = "t3"."id") WHERE ("t3"."id" = ?)', [1])
+DEBUG:root:[Menu] noselection index0
+DEBUG:root:[Menu] selection index0
+DEBUG:root:[Tags] noselection index0
+INFO:root:print_rectangle : Top x 2 Top Y0 Down X47 Down Y2 Max Y41 Max X170
+DEBUG:peewee:('SELECT "t1"."id", "t1"."name" FROM "tag" AS t1', [])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+INFO:root:print_rectangle : Top x 132 Top Y0 Down X159 Down Y5 Max Y41 Max X170
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [1])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [2])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [3])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])
+DEBUG:peewee:('SELECT Count(*) FROM "tag" AS t1 INNER JOIN "tachetag" AS t2 ON ("t1"."id" = "t2"."tag_id") WHERE ("t1"."id" = ?)', [4])

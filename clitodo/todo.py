@@ -9,7 +9,7 @@ import logging
 
 logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
-database = SqliteDatabase(':tache6:')
+database = SqliteDatabase('toto')
 
 class Tache(Model):
     description = CharField()

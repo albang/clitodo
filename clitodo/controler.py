@@ -67,7 +67,7 @@ class Controler(object):
                 self.myWindow.redraw_menu(self.currentMenu)
                 self.menus[self.mIndex.goNext()].selection()
                 self.myWindow.redraw_menu(self.currentMenu)
-                #self.myWindow.main_window(self.menus)
+                ##self.myWindow.main_window(self.menus)
             elif event == curses.KEY_LEFT:
                 self.menus[self.mIndex.getCurrent()].noSelection()
                 self.myWindow.redraw_menu(self.currentMenu)

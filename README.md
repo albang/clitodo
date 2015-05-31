@@ -2,7 +2,11 @@ clitodo
 =======
 # Clitodo Command line todo list
 A todo list in python with curses and peewee 
-Version 0.5:
+Version 0.5 ALPHA:
+
+#Run clitodp
+python3 ./controler.py
+
 Basic useful feature list:
 
  * Add a new task
