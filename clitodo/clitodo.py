@@ -170,12 +170,6 @@ class View(object):
         self.screen.refresh()
 
     def redraw_menu(self, menu):
-        if menu.getSelectedIndex() >= 0:
-            self.screen.addstr(menu.firstItemY + menu.getSelectedIndex(),
-                               menu.firstItemX,
-                               menu.getSelector() + str(menu.getSelected()),
-                               curses.A_STANDOUT
-                               )
             # if len(cleanStr) > 0:
             #    endLine = menu.firstItemX + len(menu.getSelector()) + len(str(item))
             #    self.screen.addstr(menu.firstItemY + index, endLine, cleanStr)
@@ -184,6 +178,12 @@ class View(object):
                                menu.firstItemX,
                                len(menu.getSelector())*" " +
                                str(menu.getPrevious()))
+        if menu.getSelectedIndex() >= 0:
+            self.screen.addstr(menu.firstItemY + menu.getSelectedIndex(),
+                               menu.firstItemX,
+                               menu.getSelector() + str(menu.getSelected()),
+                               curses.A_STANDOUT
+                               )
 
     def print_tags(ecran, x, y, tache):
         ltTags = tache.get_tags()
