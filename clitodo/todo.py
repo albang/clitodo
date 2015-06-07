@@ -112,10 +112,15 @@ class Tache(Model):
         return(my_string)
 
     def ajoute_tag(self, ptTag):
-        try:
-            TacheTag.create(tag=ptTag, tache=self)
-        except Exception as e:
-            logging.error(e)
+        if ptTag.getName() == "done" and not self.is_done:
+            logging.error("[ajoute_tag] you should use the other option")
+        elif ptTag.getName() == "undone" and self.is_done:
+            logging.error("[ajoute_tag] you should use the other option")
+        else:
+            try:
+                TacheTag.create(tag=ptTag, tache=self)
+            except Exception as e:
+                logging.error(e)
 
     def deleteTag(self, tagName="test"):
         try:
@@ -274,6 +279,10 @@ class Tag(Model):
     name = CharField()
     hidedTag = []
 
+
+    def getName(self):
+        return(self.name)
+
     def ajouter(self, name):
         #Verification si le tag existe
         try:
@@ -399,8 +408,11 @@ class TacheTag(Model):
     def ajouter(self):
         try:
             self.save()
-        except Exception as  e:
+        except Exception as e:
             print(e)
+
+    def __str__(self):
+        return(str(tag))
 
     class Meta:
         database = database
