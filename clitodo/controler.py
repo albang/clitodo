@@ -27,10 +27,10 @@ class Controler(object):
         self.mIndex.setCurrent(0)
 
     def packMenu(self):
-        #pas correct
-        #logging.debug("[pack_menu] taille liste"+str(len(self.menus)))
+        # pas correct
+        # logging.debug("[pack_menu] taille liste"+str(len(self.menus)))
         self.menus[0].selection(0)
-        #logging.debug("[pack_menu] reset du premier menu a" +
+        # logging.debug("[pack_menu] reset du premier menu a" +
         #                str(self.menus[0].getSelectedIndex()))
         for indice in range(1, len(self.menus)):
             self.menus[indice].noSelection()
@@ -42,8 +42,9 @@ class Controler(object):
         return(self.menus[self.mIndex.getCurrent()])
 
     def start(self):
-        if Tache().count_tache() == 0 :
-            Tache().ajouter_tache("on saisie une premiere tache",datetime.now())
+        if Tache().count_tache() == 0:
+            Tache().ajouter_tache("on saisie une premiere tache",
+                                  datetime.now())
         tagMenu = TagMenu(items=Tag().get_tags())
         self.tagMenu = tagMenu
         tagMenu.setTopX(self.myWindow.getMaxXY()["x"]-36)
@@ -67,17 +68,17 @@ class Controler(object):
                 self.myWindow.redraw_menu(self.currentMenu)
                 self.menus[self.mIndex.goNext()].selection()
                 self.myWindow.redraw_menu(self.currentMenu)
-                ##self.myWindow.main_window(self.menus)
+                # self.myWindow.main_window(self.menus)
             elif event == curses.KEY_LEFT:
                 self.menus[self.mIndex.getCurrent()].noSelection()
                 self.myWindow.redraw_menu(self.currentMenu)
                 self.menus[self.mIndex.goPrevious()].selection()
                 self.myWindow.redraw_menu(self.currentMenu)
-                #self.myWindow.main_window(self.menus)
+                # self.myWindow.main_window(self.menus)
             elif event == ord("A"):
                 newTache = self.myWindow.print_ajouter_tache()
                 Tache().ajouter_tache(newTache, datetime.now())
-                self.menus[0]=TacheMenu(items=Tache().get_tache_to_show())
+                self.menus[0] = TacheMenu(items=Tache().get_tache_to_show())
                 self.myWindow.main_window(self.menus)
             elif event == ord("G"):
                 newTache = self.myWindow.print_ajouter_tag()
@@ -113,17 +114,46 @@ class Controler(object):
                 menu.moveUp()
                 self.myWindow.redraw_menu(menu)
             elif event == 10:  # enter key
-                retour=menu.performAction()
-                if retour == "AddTag":
-                    newTag=self.myWindow.print_ajouter_tag(self.tagMenu)
-                    Tag().ajouter(newTag)
-                    self.tagMenu.reload(Tag().get_tags())
-                elif retour == "TagMe":
-                    
-                    self.tagMenu.reload(Tag().get_tags())
+                retour = menu.performAction()
+                if retour:
+                    logging.info("[popUpMenu] Retour action " + retour)
+                    if retour == "AddTag":
+                        newTag = self.myWindow.print_ajouter_tag(self.tagMenu)
+                        Tag().ajouter(newTag)
+                        self.tagMenu.reload(Tag().get_tags())
+                    elif retour == "tagMe":
+                        logging.info("[popUpMenu] On rentre dans TagMe")
+                        newTag = self.addTag()
+                        # Maybe we should avec name menu to call TacheMenu more
+                        # than previous menu
+                        previousMenu = self.mIndex.getPrevious()
+                        logging.info("[popUpMenu]"+
+                                    str(self.menus[previousMenu].getPrevious()))
+                        self.menus[previousMenu].getPrevious().ajoute_tag(newTag)
+                        self.tagMenu.reload(Tag().get_tags())
                 menu.noSelection()
                 break
 
+    def addTag(self):
+        self.menus[self.mIndex.getCurrent()].noSelection()
+        self.myWindow.redraw_menu(self.currentMenu)
+        self.menus[self.mIndex.goNext()].selection()
+        self.myWindow.redraw_menu(self.currentMenu)
+        while True:
+            event = self.myWindow.screen.getch()
+            if event == ord("Q"):
+                self.myWindow.stop()
+                exit(0)
+            elif event == curses.KEY_DOWN:
+                if self.menus[self.mIndex.getCurrent()].moveDown():
+                    self.myWindow.redraw_menu(self.currentMenu)
+            elif event == curses.KEY_UP:
+                if self.menus[self.mIndex.getCurrent()].moveUp():
+                    self.myWindow.redraw_menu(self.currentMenu)
+            elif event == 10:  # enter key
+                newTag = self.menus[self.mIndex.getCurrent()].getSelected()
+                break
+        return(newTag)
 
 if __name__ == '__main__':
     myApplication = Controler()

@@ -171,7 +171,7 @@ class View(object):
 
     def redraw_menu(self, menu):
             # if len(cleanStr) > 0:
-            #    endLine = menu.firstItemX + len(menu.getSelector()) + len(str(item))
+            #    endLine = menuself.firstItemX + len(menu.getSelector()) + len(str(item))
             #    self.screen.addstr(menu.firstItemY + index, endLine, cleanStr)
         if menu.getPreviousIndex() >= 0:
             self.screen.addstr(menu.firstItemY + menu.getPreviousIndex(),

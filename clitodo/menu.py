@@ -315,7 +315,6 @@ class TacheTagMenu(Menu):
             totalPadding += len(item.name)+1
         return((totalPadding), (self.topY))
 
-
 class TagMenu(Menu):
     """docstring for TagMenu"""
     def __init__(self, items, title="Tags"):

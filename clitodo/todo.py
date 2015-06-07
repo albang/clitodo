@@ -127,7 +127,7 @@ class Tache(Model):
     def tagTest(self):
         logging.info("[pb1]"+self.description+" Tag test ")
         self.ajoute_tag(ptTag=Tag().ajouter(name="test"))
-        pass
+        return("tagMe")
 
     def tagMe(self):
         return("tagMe")
@@ -179,7 +179,7 @@ class Tache(Model):
                       'show': True,
                       }},
                       {'Tagguer': {
-                       'action': self.tagTest,
+                       'action': self.tagMe,
                        'show': True,
                        }},
                       {'Delete': {
@@ -216,7 +216,7 @@ class Tache(Model):
     def len(self):
         return(len(str(self)))
 
-    def cache_nb_tag(fonctionADecorer,self):
+    def cache_nb_tag(fonctionADecorer, self):
         def wrapper(self):
             hasChanged = Tag.hideNbTaches()
             monStr = fonctionADecorer(self)
